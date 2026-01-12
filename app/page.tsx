@@ -89,6 +89,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Vision Section */}
+      <section className="bg-primary text-primary-foreground py-20 relative overflow-hidden">
+        <div className="container px-4 text-center relative z-10">
+          <span className="uppercase tracking-widest text-sm font-medium opacity-80 mb-4 block">Our Vision</span>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold mb-8 max-w-4xl mx-auto leading-tight">
+            "Sing to the Lord, all the earth; proclaim his salvation day after day. Declare his glory among the nations, his marvelous deeds among all peoples."
+          </h2>
+          <p className="font-serif text-xl italic opacity-90">— 1 Chronicles 16:23-24</p>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+      </section>
+
       {/* Upcoming Events / Mock Content */}
       <section className="bg-secondary/30 py-20">
           <div className="container px-4">

@@ -10,6 +10,12 @@ export default function AboutPage() {
                      (Image of Ministry)
                  </div>
                  <div className="text-left space-y-4">
+                     <h2 className="font-serif text-2xl font-bold">Our Vision</h2>
+                     <blockquote className="border-l-4 border-primary pl-4 italic text-lg text-muted-foreground my-6">
+                        "Sing to the Lord, all the earth; proclaim his salvation day after day. Declare his glory among the nations, his marvelous deeds among all peoples."
+                        <footer className="text-sm font-medium mt-2 not-italic text-primary">— 1 Chronicles 16:23-24</footer>
+                     </blockquote>
+
                      <h2 className="font-serif text-2xl font-bold">Our Mission</h2>
                      <p className="text-muted-foreground">
                          To raise a generation of believers who walk in power, love, and sound mind. We believe in the practical application of the Word of God to transform societies.
