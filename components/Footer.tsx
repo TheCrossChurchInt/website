@@ -1,9 +1,13 @@
+import Logo from "./Logo";
+
 export default function Footer() {
   return (
     <footer className="bg-muted py-12 mt-24">
       <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
         <div>
-          <h3 className="font-serif text-xl font-bold mb-4 text-primary">Prophet Benson</h3>
+          <div className="flex justify-center md:justify-start mb-4">
+             <Logo />
+          </div>
           <p className="text-muted-foreground text-sm leading-relaxed">
             Guiding souls through faith and prophecy. Join us for a life-changing experience.
           </p>
