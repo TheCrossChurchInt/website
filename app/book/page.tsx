@@ -50,42 +50,51 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="container mx-auto py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="font-serif text-4xl font-bold mb-8 text-center">Book a Prophetic Session</h1>
+    <div className="container mx-auto py-16 px-4 md:px-8 max-w-5xl">
+      <div className="text-center mb-12 space-y-4">
+        <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground">Book a Prophetic Session</h1>
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Schedule a time for spiritual guidance and prayer. Please select a date and time that works best for you.
+        </p>
+      </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Calendar Section */}
-          <Card className={step === 2 ? "opacity-50 pointer-events-none" : ""}>
-            <CardHeader>
-              <CardTitle>Select Date & Time</CardTitle>
-              <CardDescription>Choose a slot for your one-on-one session.</CardDescription>
+      <div className="grid md:grid-cols-12 gap-8 lg:gap-12">
+        {/* Calendar Section */}
+        <div className={`md:col-span-5 lg:col-span-5 space-y-6 ${step === 2 ? "opacity-50 pointer-events-none" : ""}`}>
+           <Card className="h-full border-none shadow-lg">
+            <CardHeader className="text-center pb-2">
+              <CardTitle className="text-xl">Select Date</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col items-center">
+            <CardContent className="flex flex-col items-center p-6">
               <Calendar
                 mode="single"
                 selected={date}
                 onSelect={setDate}
-                className="rounded-md border mb-6"
+                className="rounded-md border p-4 w-full flex justify-center"
                 disabled={(date) => date < new Date()}
               />
-              <div className="grid grid-cols-3 gap-2 w-full">
-                {timeSlots.map((slot) => (
-                  <Button
-                    key={slot}
-                    variant={time === slot ? "default" : "outline"}
-                    onClick={() => setTime(slot)}
-                    className="text-xs"
-                  >
-                    {slot}
-                  </Button>
-                ))}
-              </div>
             </CardContent>
           </Card>
+           <Card className="border-none shadow-sm bg-muted/30">
+             <CardContent className="p-6">
+                <div className="grid grid-cols-3 gap-3">
+                    {timeSlots.map((slot) => (
+                    <Button
+                        key={slot}
+                        variant={time === slot ? "default" : "outline"}
+                        onClick={() => setTime(slot)}
+                        className="text-xs h-10 transition-all hover:border-primary/50"
+                    >
+                        {slot}
+                    </Button>
+                    ))}
+                </div>
+             </CardContent>
+           </Card>
+        </div>
 
-          {/* Details Section */}
-          <div className="space-y-6">
+        {/* Details Section */}
+        <div className="md:col-span-7 lg:col-span-7 space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle>Your Details</CardTitle>

@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-24 md:gap-32 pb-24">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center bg-stone-100 overflow-hidden">
+      <section className="relative min-h-[700px] flex items-center justify-center bg-stone-100 overflow-hidden py-20">
         {/* Abstract Background Shape */}
         <div className="absolute inset-0 bg-primary/10" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-l-[100px] hidden md:block" />
