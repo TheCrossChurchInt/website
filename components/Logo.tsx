@@ -23,11 +23,11 @@ export default function Logo({ className, light = false }: { className?: string;
         </svg>
       </div>
       <div className="flex flex-col">
-        <span className={cn("font-serif text-lg font-bold leading-none tracking-tight", light ? "text-white" : "text-foreground")}>
+        <span className="font-serif text-lg font-bold leading-none tracking-tight", light ? "text-white" : "text-foreground")}>
           Prophet Benson
         </span>
         <span className={cn("text-[0.65rem] font-medium uppercase tracking-widest opacity-80", light ? "text-white/80" : "text-muted-foreground")}>
-          The Cross Church Int.
+          Deliverance City for Nations
         </span>
       </div>
     </div>

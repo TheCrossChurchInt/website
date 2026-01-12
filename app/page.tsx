@@ -15,7 +15,7 @@ export default function Home() {
         <div className="container px-4 relative z-10 grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-center md:text-left">
                 <span className="inline-block px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
-                    Welcome to The Cross Church Int.
+                    Welcome to Deliverance City for Nations
                 </span>
                 <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground leading-tight">
                     Walking in <br/>
