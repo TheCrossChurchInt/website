@@ -12,7 +12,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-primary/10" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-l-[100px] hidden md:block" />
         
-        <div className="container px-4 relative z-10 grid md:grid-cols-2 gap-8 items-center">
+        <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-center md:text-left">
                 <span className="inline-block px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
                     Welcome to Deliverance City for Nations
@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       {/* Features / Quick Access */}
-      <section className="container px-4">
+      <section className="container">
         <div className="grid md:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow border-none shadow-md bg-card">
                 <CardContent className="pt-6 flex flex-col items-center text-center space-y-4">
@@ -91,7 +91,7 @@ export default function Home() {
 
       {/* Vision Section */}
       <section className="bg-primary text-primary-foreground py-20 relative overflow-hidden">
-        <div className="container px-4 text-center relative z-10">
+        <div className="container text-center relative z-10">
           <span className="uppercase tracking-widest text-sm font-medium opacity-80 mb-4 block">Our Vision</span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold mb-8 max-w-4xl mx-auto leading-tight">
             "Sing to the Lord, all the earth; proclaim his salvation day after day. Declare his glory among the nations, his marvelous deeds among all peoples."
@@ -103,7 +103,7 @@ export default function Home() {
 
       {/* Upcoming Events / Mock Content */}
       <section className="bg-secondary/30 py-20">
-          <div className="container px-4">
+          <div className="container">
               <div className="flex justify-between items-end mb-12">
                   <div>
                       <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Upcoming Events</h2>
