@@ -58,43 +58,60 @@ export default function BookingPage() {
         </p>
       </div>
         
-      <div className="grid md:grid-cols-12 gap-8 lg:gap-12">
+      <div className="flex flex-col gap-12 max-w-4xl mx-auto">
         {/* Calendar Section */}
-        <div className={`md:col-span-5 lg:col-span-5 space-y-6 ${step === 2 ? "opacity-50 pointer-events-none" : ""}`}>
-           <Card className="h-full border-none shadow-lg">
-            <CardHeader className="text-center pb-2">
-              <CardTitle className="text-xl">Select Date</CardTitle>
+        <div className={`space-y-8 ${step === 2 ? "opacity-50 pointer-events-none" : ""}`}>
+           <Card className="border-none shadow-xl overflow-hidden">
+            <CardHeader className="bg-primary/5 pb-8 pt-8">
+              <CardTitle className="text-2xl text-center font-serif">Select Date</CardTitle>
+              <CardDescription className="text-center">Available sessions for this month</CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col items-center p-6">
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={setDate}
-                className="rounded-md border p-4 w-full flex justify-center"
-                disabled={(date) => date < new Date()}
-              />
+            <CardContent className="p-0">
+              <div className="flex justify-center p-8 bg-card">
+                  <Calendar
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate}
+                    className="p-0"
+                    classNames={{
+                        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+                        month: "space-y-4 w-full",
+                        caption: "flex justify-center pt-1 relative items-center mb-4",
+                        caption_label: "text-lg font-medium",
+                        table: "w-full border-collapse space-y-1",
+                        head_row: "flex justify-between mb-2",
+                        head_cell: "text-muted-foreground rounded-md w-12 font-normal text-[0.9rem]",
+                        row: "flex w-full mt-2 justify-between",
+                        cell: "h-12 w-12 text-center text-sm p-0 relative [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+                        day: "h-12 w-12 p-0 font-normal aria-selected:opacity-100 hover:bg-accent rounded-md transition-colors",
+                        day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
+                        day_today: "bg-accent text-accent-foreground font-bold",
+                    }}
+                    disabled={(date) => date < new Date()}
+                  />
+              </div>
+              
+               <div className="border-t bg-muted/20 p-8">
+                    <h3 className="text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-6">Available Times</h3>
+                    <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+                        {timeSlots.map((slot) => (
+                        <Button
+                            key={slot}
+                            variant={time === slot ? "default" : "outline"}
+                            onClick={() => setTime(slot)}
+                            className="text-xs h-10 w-full transition-all hover:border-primary/50"
+                        >
+                            {slot}
+                        </Button>
+                        ))}
+                    </div>
+               </div>
             </CardContent>
           </Card>
-           <Card className="border-none shadow-sm bg-muted/30">
-             <CardContent className="p-6">
-                <div className="grid grid-cols-3 gap-3">
-                    {timeSlots.map((slot) => (
-                    <Button
-                        key={slot}
-                        variant={time === slot ? "default" : "outline"}
-                        onClick={() => setTime(slot)}
-                        className="text-xs h-10 transition-all hover:border-primary/50"
-                    >
-                        {slot}
-                    </Button>
-                    ))}
-                </div>
-             </CardContent>
-           </Card>
         </div>
 
         {/* Details Section */}
-        <div className="md:col-span-7 lg:col-span-7 space-y-6">
+        <div className="max-w-2xl mx-auto w-full space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle>Your Details</CardTitle>
